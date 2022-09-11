@@ -151,8 +151,9 @@ export class AuthService {
             newUser.name = dto.name;
             newUser.lastname = dto.lastname;
             newUser.birthdate = dto.birthdate;
-            newUser.age = getDatesDiffIn(dto.birthdate, Date.now(), 'years');
-            newUser.accept_terms_and_condition = (dto.hasAccepted) ? 1 : 0;
+            // newUser.age = getDatesDiffIn(dto.birthdate, Date.now(), 'years');
+            newUser.age = 25;
+            newUser.accept_terms_and_condition = 1;
 
             const userInserted = await userRepository.save(newUser, connection);
             newUser.id = userInserted.insertId;
